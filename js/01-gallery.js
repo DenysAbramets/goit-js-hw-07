@@ -22,7 +22,9 @@ function createGalleryImage(galleryItems){
 
 };
 
-    
+    // if(event.code === "ESCAPE"){
+
+    // }
 
 
 

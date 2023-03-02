@@ -8,7 +8,7 @@ const containerGallery = document.querySelector(".gallery");
 function createGalleryImage(galleryItems){
     return galleryItems.map(image => {
         return ` <a class="gallery__item" href="${image.original}">
-  <img class="gallery__image" src="${image.preview}" alt="${image.description}" />
+  <img class="gallery__image" src="${image.preview}" alt="${image.description}" title="" />
 </a>
         `
     }).join("");
@@ -19,13 +19,9 @@ function createGalleryImage(galleryItems){
 
 
 
-containerGallery.addEventListener("click" , onOpenModal);
 
-function onOpenModal(event) {
-    if(event.target.nodeName !== 'IMG'){
-        return;
-    };
-    event.preventDefault();
-    const  lightbox = new SimpleLightbox('.gallery a', { /* options */ });
-
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+    captionPosition: 'bottom',
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
